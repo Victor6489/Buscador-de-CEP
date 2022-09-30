@@ -5,7 +5,7 @@ import './styles.css'
 function App() {
   const [input, setInput] = useState('')
 
-  function handlesearch() {
+  async function handleSearch() {
     if (input === '') {
       alert("Preencha algum CEP!")
       return;
@@ -21,7 +21,7 @@ function App() {
           value={input}
           onChange={(e) => setInput(e.target.value)}
         />
-        <button className='buttonSearch'>
+        <button className='buttonSearch' onClick={handleSearch}>
           <FiSearch size={25} color='#fff' />
         </button>
       </div>
