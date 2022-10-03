@@ -9,7 +9,7 @@ function App() {
 
   async function handleSearch() {
     if (input === '') {
-      alert("Preencha algum CEP!")
+      alert("Não foi detectado nenhum CEP, para encontrar o seu endereço digite um CEP válido")
       return;
     }
     try {
@@ -18,7 +18,7 @@ function App() {
       setInput("");
     }
     catch {
-      alert("Erro ao buscar aqui")
+      alert("Erro ao buscar este CEP, por favor digite um CEP válido")
       setInput("")
     }
   }
@@ -29,7 +29,7 @@ function App() {
       <div className='containerInput'>
         <input
           type="text"
-          placeholder='Digite seu cep'
+          placeholder='Digite o CEP'
           value={input}
           onChange={(e) => setInput(e.target.value)}
         />
